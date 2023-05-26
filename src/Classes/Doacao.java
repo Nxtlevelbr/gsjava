@@ -1,6 +1,6 @@
 package Classes;
-import java.util.ArrayList;
 import java.util.Date;
+import java.util.ArrayList;
 
 public class Doacao {
 
@@ -10,12 +10,17 @@ public class Doacao {
     private Destinatario destinatario;
     private ArrayList<Alimento> alimentos;
 
-    public Doacao(int id, Date dataDoacao, int quantidade, Destinatario destinatario, ArrayList<Alimento> alimentos) {
+    public  Doacao(int id, Date dataDoacao, int quantidade, Destinatario destinatario, ArrayList<Alimento> alimentos) {
         this.id = id;
         this.dataDoacao = dataDoacao;
         this.quantidade = quantidade;
         this.destinatario = destinatario;
-        this.alimentos = alimentos;
+
+        if (alimentos != null) {
+            this.alimentos = alimentos;
+        } else {
+            this.alimentos = new ArrayList<>();
+        }
     }
 
     public int getId() {
@@ -55,8 +60,10 @@ public class Doacao {
     }
 
     public void setAlimentos(ArrayList<Alimento> alimentos) {
-        this.alimentos = alimentos;
+        if (alimentos != null) {
+            this.alimentos = alimentos;
+        } else {
+            this.alimentos = new ArrayList<>();
+        }
     }
-
-    //método adicionar alimentos
 }

@@ -10,8 +10,9 @@ public class Alimento {
     private int quantidade;
     private Fornecedor fornecedor;
     private Categoria categoria;
+    private double valorUnitario;
 
-    public Alimento(int id, String nome, Date dataRecebimento, int periodoValidade, int quantidade, Fornecedor fornecedor, Categoria categoria) {
+    public Alimento(int id, String nome, Date dataRecebimento, int periodoValidade, int quantidade, Fornecedor fornecedor, Categoria categoria, double valorUnitario) {
         this.id = id;
         this.nome = nome;
         this.dataRecebimento = dataRecebimento;
@@ -19,6 +20,7 @@ public class Alimento {
         this.quantidade = quantidade;
         this.fornecedor = fornecedor;
         this.categoria = categoria;
+        this.valorUnitario = valorUnitario;
     }
 
     public int getId() {
@@ -76,4 +78,24 @@ public class Alimento {
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
     }
+
+    public void removerQuantidade(int quantidade) {
+        if (quantidade > 0 && this.quantidade >= quantidade) {
+            this.quantidade -= quantidade;
+        } else {
+            System.out.println("Quantidade inválida para remoção.");
+        }
+    }
+
+    public double getValorUnitario() {
+        double valor = 0.0;
+
+        if (fornecedor != null && quantidade > 0) {
+            double valorUnitario = fornecedor.getPrecoUnitario();
+            valor = quantidade * valorUnitario;
+        }
+
+        return valor;
+    }
 }
+
