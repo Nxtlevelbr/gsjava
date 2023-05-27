@@ -25,13 +25,12 @@ public class Testes {
         System.out.println("Data doação " + doacao.getDataDoacao() );
         System.out.println("Quantidade: " + doacao.getQuantidade());
         System.out.println("Destinatario: " + doacao.getDestinatario());
-
         System.out.println("Alimentos para doação: ");
+
         for (Alimento alimento : doacao.getAlimentos()){
             System.out.println("Nome: " + alimento.getNome());
             System.out.println("valor unitario: " + alimento.getValorUnitario());
             System.out.println("-------------");
         }
-
     }
 }

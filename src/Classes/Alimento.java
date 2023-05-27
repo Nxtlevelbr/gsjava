@@ -1,21 +1,18 @@
 package Classes;
-import java.util.Date;
 
 public class Alimento {
 
     private int id;
     private String nome;
-    private Date dataRecebimento;
     private int periodoValidade;
     private int quantidade;
     private Fornecedor fornecedor;
     private Categoria categoria;
     private double valorUnitario;
 
-    public Alimento(int id, String nome, Date dataRecebimento, int periodoValidade, int quantidade, Fornecedor fornecedor, Categoria categoria, double valorUnitario) {
+    public Alimento(int id, String nome, int periodoValidade, int quantidade, Fornecedor fornecedor, Categoria categoria, double valorUnitario) {
         this.id = id;
         this.nome = nome;
-        this.dataRecebimento = dataRecebimento;
         this.periodoValidade = periodoValidade;
         this.quantidade = quantidade;
         this.fornecedor = fornecedor;
@@ -37,14 +34,6 @@ public class Alimento {
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public Date getDataRecebimento() {
-        return dataRecebimento;
-    }
-
-    public void setDataRecebimento(Date dataRecebimento) {
-        this.dataRecebimento = dataRecebimento;
     }
 
     public int getPeriodoValidade() {

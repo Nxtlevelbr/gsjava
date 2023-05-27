@@ -3,11 +3,15 @@ package Classes;
 public class Categoria {
 
     private String tipoAlimento;
-    private String prioridade;
+    private int prioridade;
 
-    public Categoria(String tipoAlimento, String prioridade) {
+    public Categoria(String tipoAlimento, int prioridade){
         this.tipoAlimento = tipoAlimento;
         this.prioridade = prioridade;
+    }
+
+    public Categoria(){
+
     }
 
     public String getTipoAlimento() {
@@ -18,11 +22,11 @@ public class Categoria {
         this.tipoAlimento = tipoAlimento;
     }
 
-    public String getPrioridade() {
+    public int getPrioridade() {
         return prioridade;
     }
 
-    public void setPrioridade(String prioridade) {
+    public void setPrioridade(int prioridade) {
         this.prioridade = prioridade;
     }
 }
