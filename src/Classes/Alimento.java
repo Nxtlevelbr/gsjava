@@ -88,14 +88,13 @@ public class Alimento {
     }
 
     public double getValorUnitario() {
-        double valor = 0.0;
-
         if (fornecedor != null && quantidade > 0) {
             double valorUnitario = fornecedor.getPrecoUnitario();
-            valor = quantidade * valorUnitario;
+            double valor = quantidade * valorUnitario;
+            return valor;
+        } else {
+            return 0.0;
         }
-
-        return valor;
     }
 }
 

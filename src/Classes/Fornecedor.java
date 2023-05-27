@@ -1,6 +1,6 @@
 package Classes;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.List;
 
 public class Fornecedor {
 
@@ -8,7 +8,7 @@ public class Fornecedor {
     private String nome;
     private String endereco;
     private String contato;
-    private List<Alimento> alimentos;
+    private ArrayList<Alimento> alimentos;
 
     public Fornecedor(int id, String nome, String endereco, String contato) {
         this.id = id;

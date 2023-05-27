@@ -10,7 +10,7 @@ public class Doacao {
     private Destinatario destinatario;
     private ArrayList<Alimento> alimentos;
 
-    public  Doacao(int id, Date dataDoacao, int quantidade, Destinatario destinatario, ArrayList<Alimento> alimentos) {
+    public Doacao(int id, Date dataDoacao, int quantidade, Destinatario destinatario, ArrayList<Alimento> alimentos) {
         this.id = id;
         this.dataDoacao = dataDoacao;
         this.quantidade = quantidade;

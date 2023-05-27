@@ -31,7 +31,6 @@ public class Testes {
             System.out.println("Nome: " + alimento.getNome());
             System.out.println("valor unitario: " + alimento.getValorUnitario());
             System.out.println("-------------");
-
         }
 
     }

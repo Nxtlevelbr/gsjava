@@ -1,14 +1,13 @@
 package Classes;
 import java.util.ArrayList;
-import java.util.List;
 
 public class Cooperativa {
-    private List<Alimento> estoque;
+    private ArrayList<Alimento> estoque;
 
     public Cooperativa(){
         estoque = new ArrayList<>();
-
     }
+
     public void venderAlimento(Alimento alimento, int quantidade) {
         if (estoque.contains(alimento)) {
             int index = estoque.indexOf(alimento);
