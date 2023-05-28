@@ -4,16 +4,16 @@ public class Alimento {
 
     private int id;
     private String nome;
-    private int periodoValidade;
+    private int validade;
     private int quantidade;
     private Fornecedor fornecedor;
     private Categoria categoria;
     private double valorUnitario;
 
-    public Alimento(int id, String nome, int periodoValidade, int quantidade, Fornecedor fornecedor, Categoria categoria, double valorUnitario) {
+    public Alimento(int id, String nome, int validade, int quantidade, Fornecedor fornecedor, Categoria categoria, double valorUnitario) {
         this.id = id;
         this.nome = nome;
-        this.periodoValidade = periodoValidade;
+        this.validade = validade;
         this.quantidade = quantidade;
         this.fornecedor = fornecedor;
         this.categoria = categoria;
@@ -36,12 +36,16 @@ public class Alimento {
         this.nome = nome;
     }
 
-    public int getPeriodoValidade() {
-        return periodoValidade;
+    public int getValidade() {
+        return validade;
     }
 
-    public void setPeriodoValidade(int periodoValidade) {
-        this.periodoValidade = periodoValidade;
+    public void setValidade(int validade) {
+        this.validade = validade;
+    }
+
+    public void setValorUnitario(double valorUnitario) {
+        this.valorUnitario = valorUnitario;
     }
 
     public int getQuantidade() {
@@ -73,16 +77,6 @@ public class Alimento {
             this.quantidade -= quantidade;
         } else {
             System.out.println("Quantidade inválida para remoção.");
-        }
-    }
-
-    public double getValorUnitario() {
-        if (fornecedor != null && quantidade > 0) {
-            double valorUnitario = fornecedor.getPrecoUnitario();
-            double valor = quantidade * valorUnitario;
-            return valor;
-        } else {
-            return 0.0;
         }
     }
 }

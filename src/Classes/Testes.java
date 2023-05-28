@@ -9,9 +9,9 @@ public class Testes {
     public static void main(String[] args){
         Fornecedor fornecedor = new Fornecedor(1, "forecedor A", "endereço A","Contato A");
 
-        Categoria categoria = new Categoria("verduras" , "categoria A");
+        Categoria categoria = new Categoria("verduras" , 3);
 
-        Alimento alimento1 = new Alimento(1,"Alimento1", new Date(),7,10,fornecedor,categoria,5.0);
+        Alimento alimento1 = new Alimento(1,"Alimento1", 4,7, fornecedor, categoria,5.0);
 
         Destinatario destinatario = new Destinatario(1,"Destinatario a", "endereço A", "a");
 

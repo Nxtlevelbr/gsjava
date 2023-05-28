@@ -1,48 +1,31 @@
 package Classes;
 
+import java.util.ArrayList;
+import java.util.Date;
+
 public class Destinatario {
 
-    private int id;
-    private String nome;
-    private String endereco;
-    private String contato;
+    private Date dataDoacao;
+    private ArrayList<Doacao> lotesDoados;
 
-    public Destinatario(int id, String nome, String endereco, String contato) {
-        this.id = id;
-        this.nome = nome;
-        this.endereco = endereco;
-        this.contato = contato;
+    public Destinatario(Date dataDoacao, ArrayList<Doacao> lotesDoados) {
+        this.dataDoacao = dataDoacao;
+        this.lotesDoados = lotesDoados;
     }
 
-    public int getId() {
-        return id;
+    public Date getDataDoacao() {
+        return dataDoacao;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setDataDoacao(Date dataDoacao) {
+        this.dataDoacao = dataDoacao;
     }
 
-    public String getNome() {
-        return nome;
+    public ArrayList<Doacao> getLotesDoados() {
+        return lotesDoados;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
-    }
-
-    public String getContato() {
-        return contato;
-    }
-
-    public void setContato(String contato) {
-        this.contato = contato;
+    public void setLotesDoados(ArrayList<Doacao> lotesDoados) {
+        this.lotesDoados = lotesDoados;
     }
 }
