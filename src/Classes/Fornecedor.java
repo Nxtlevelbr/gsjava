@@ -2,6 +2,7 @@ package Classes;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class Fornecedor {
 
     private int id;
@@ -62,7 +63,7 @@ public class Fornecedor {
             }
             return somaPrecos / alimentos.size();
         } else {
-            return 0.0; // ou algum valor padrão caso não haja alimentos cadastrados para esse fornecedor
+            return 0.0; // oou algum valor padrão caso não haja alimentos cadastrados para esse fornecedor
         }
     }
  }
