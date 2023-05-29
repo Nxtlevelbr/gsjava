@@ -3,11 +3,19 @@ package Classes;
 public class Categoria {
 
     private String tipoAlimento;
-    private int prioridade;
+    private String prioridade;
 
-    public Categoria(String tipoAlimento, int prioridade){
+    public Categoria(String tipoAlimento, int validade){
         this.tipoAlimento = tipoAlimento;
-        this.prioridade = prioridade;
+        if (validade > 10){
+            this.prioridade = "Urgente";
+        } else if(validade > 15){
+            this.prioridade = "Alta";
+        } else if(validade > 30) {
+            this.prioridade = "Media";
+        } else {
+            this.prioridade = "baixa";
+        }
     }
 
     public Categoria(){
@@ -22,11 +30,11 @@ public class Categoria {
         this.tipoAlimento = tipoAlimento;
     }
 
-    public int getPrioridade() {
+    public String getPrioridade() {
         return prioridade;
     }
 
-    public void setPrioridade(int prioridade) {
+    public void setPrioridade(String prioridade) {
         this.prioridade = prioridade;
     }
 }

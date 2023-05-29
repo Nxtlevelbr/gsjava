@@ -1,5 +1,7 @@
 package Classes;
 
+import java.util.Scanner;
+
 public class Alimento {
 
     private int id;
@@ -18,6 +20,10 @@ public class Alimento {
         this.fornecedor = fornecedor;
         this.categoria = categoria;
         this.valorUnitario = valorUnitario;
+    }
+
+    public Alimento(){
+
     }
 
     public int getId() {

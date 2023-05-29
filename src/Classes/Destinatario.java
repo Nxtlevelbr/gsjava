@@ -28,4 +28,10 @@ public class Destinatario {
     public void setLotesDoados(ArrayList<Doacao> lotesDoados) {
         this.lotesDoados = lotesDoados;
     }
+
+
+    public void enviarDoac(){
+
+    }
+
 }
