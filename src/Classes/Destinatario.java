@@ -30,8 +30,8 @@ public class Destinatario {
     }
 
 
-    public void enviarDoac(){
-
+    public void enviarDoac(Doacao doacao){
+    	lotesDoados.add(doacao);
     }
 
 }

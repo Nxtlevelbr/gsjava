@@ -6,9 +6,6 @@ public class Doacao {
 
     private int id;
     private ArrayList<Alimento> alimentos;
-    private Scanner strInput;
-    private Scanner intInput;
-    private Scanner dblInput;
 
     public Doacao(int id){
         this.id = id;
@@ -27,21 +24,17 @@ public class Doacao {
     }
 
     public void setAlimentos(ArrayList<Alimento> alimentos) {
-        if (alimentos != null) {
-            this.alimentos = alimentos;
-        } else {
-            this.alimentos = new ArrayList<>();
-        }
-    }
+		this.alimentos = alimentos;
+	}
 
-    public void addLote(){
+	public void addLote(){
         alimentos.add(novoAlim());
     }
 
     public Alimento novoAlim(){
-        strInput = new Scanner(System.in);
-        intInput = new Scanner(System.in);
-        dblInput = new Scanner(System.in);
+        Scanner strInput = new Scanner(System.in);
+        Scanner intInput = new Scanner(System.in);
+        Scanner dblInput = new Scanner(System.in);
 
         System.out.println("Dados do alimento\n");
         System.out.println("Insira o id do alimento: ");
