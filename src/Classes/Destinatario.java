@@ -32,4 +32,19 @@ public class Destinatario {
 	public void enviarDoac(Doacao doacao){
     	lotesDoados.add(doacao);
     }
+
+	public void listarDoac(){
+		for(Doacao doacao : lotesDoados){
+			System.out.println(doacao.getId());
+		}
+	}
+
+	public void mostrar() {
+		System.out.println("Destinatario" + getNome());
+		System.out.println("Lotes doados: ");
+		listarDoac();
+		System.out.println();
+	}
+	
+	
 }

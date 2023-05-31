@@ -33,7 +33,22 @@ public class Doacao {
 	}
 
 	public void addLote(){
-        alimentos.add(novoAlim());
+		Scanner strInput = new Scanner(System.in);
+        String opt;
+        boolean bo = true;
+
+        while(bo == true) {
+
+			alimentos.add(novoAlim());
+
+            System.out.println("Gostaria de adicionar um novo alimento? s/n: ");
+            opt = strInput.nextLine();
+            if(opt == "s"){
+                bo = true;
+            } else {
+                bo = false;
+            }
+		}
     }
 
     public Alimento novoAlim(){
