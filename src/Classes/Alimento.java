@@ -1,26 +1,29 @@
 package Classes;
-import java.util.Date;
+
+import java.util.Scanner;
 
 public class Alimento {
 
     private int id;
     private String nome;
-    private Date dataRecebimento;
-    private int periodoValidade;
+    private int validade;
     private int quantidade;
     private Fornecedor fornecedor;
     private Categoria categoria;
     private double valorUnitario;
 
-    public Alimento(int id, String nome, Date dataRecebimento, int periodoValidade, int quantidade, Fornecedor fornecedor, Categoria categoria, double valorUnitario) {
+    public Alimento(int id, String nome, int validade, int quantidade, Fornecedor fornecedor, Categoria categoria, double valorUnitario) {
         this.id = id;
         this.nome = nome;
-        this.dataRecebimento = dataRecebimento;
-        this.periodoValidade = periodoValidade;
+        this.validade = validade;
         this.quantidade = quantidade;
         this.fornecedor = fornecedor;
         this.categoria = categoria;
         this.valorUnitario = valorUnitario;
+    }
+
+    public Alimento(){
+
     }
 
     public int getId() {
@@ -39,21 +42,21 @@ public class Alimento {
         this.nome = nome;
     }
 
-    public Date getDataRecebimento() {
-        return dataRecebimento;
+    public int getValidade() {
+        return validade;
     }
 
-    public void setDataRecebimento(Date dataRecebimento) {
-        this.dataRecebimento = dataRecebimento;
+    public void setValidade(int validade) {
+        this.validade = validade;
     }
 
-    public int getPeriodoValidade() {
-        return periodoValidade;
+    public void setValorUnitario(double valorUnitario) {
+        this.valorUnitario = valorUnitario;
     }
-
-    public void setPeriodoValidade(int periodoValidade) {
-        this.periodoValidade = periodoValidade;
-    }
+    
+    public double getValorUnitario() {
+		return valorUnitario;
+	}
 
     public int getQuantidade() {
         return quantidade;
@@ -78,24 +81,13 @@ public class Alimento {
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
     }
-
+    
     public void removerQuantidade(int quantidade) {
         if (quantidade > 0 && this.quantidade >= quantidade) {
             this.quantidade -= quantidade;
         } else {
             System.out.println("Quantidade inválida para remoção.");
         }
-    }
-
-    public double getValorUnitario() {
-        double valor = 0.0;
-
-        if (fornecedor != null && quantidade > 0) {
-            double valorUnitario = fornecedor.getPrecoUnitario();
-            valor = quantidade * valorUnitario;
-        }
-
-        return valor;
     }
 }
 

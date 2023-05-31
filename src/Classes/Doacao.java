@@ -1,26 +1,19 @@
 package Classes;
-import java.util.Date;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Doacao {
 
     private int id;
-    private Date dataDoacao;
-    private int quantidade;
-    private Destinatario destinatario;
     private ArrayList<Alimento> alimentos;
 
-    public  Doacao(int id, Date dataDoacao, int quantidade, Destinatario destinatario, ArrayList<Alimento> alimentos) {
+    public Doacao(int id){
         this.id = id;
-        this.dataDoacao = dataDoacao;
-        this.quantidade = quantidade;
-        this.destinatario = destinatario;
-
-        if (alimentos != null) {
-            this.alimentos = alimentos;
-        } else {
-            this.alimentos = new ArrayList<>();
-        }
+        alimentos = new ArrayList<Alimento>();
+    }
+    
+    public Doacao() {
+    	
     }
 
     public int getId() {
@@ -31,39 +24,69 @@ public class Doacao {
         this.id = id;
     }
 
-    public Date getDataDoacao() {
-        return dataDoacao;
-    }
-
-    public void setDataDoacao(Date dataDoacao) {
-        this.dataDoacao = dataDoacao;
-    }
-
-    public int getQuantidade() {
-        return quantidade;
-    }
-
-    public void setQuantidade(int quantidade) {
-        this.quantidade = quantidade;
-    }
-
-    public Destinatario getDestinatario() {
-        return destinatario;
-    }
-
-    public void setDestinatario(Destinatario destinatario) {
-        this.destinatario = destinatario;
-    }
-
     public ArrayList<Alimento> getAlimentos() {
         return alimentos;
     }
 
     public void setAlimentos(ArrayList<Alimento> alimentos) {
-        if (alimentos != null) {
-            this.alimentos = alimentos;
-        } else {
-            this.alimentos = new ArrayList<>();
-        }
+		this.alimentos = alimentos;
+	}
+
+	public void addLote(){
+		Scanner strInput = new Scanner(System.in);
+        String opt;
+        boolean bo = true;
+
+        while(bo == true) {
+
+			alimentos.add(novoAlim());
+
+            System.out.println("Gostaria de adicionar um novo alimento? s/n: ");
+            opt = strInput.nextLine();
+            if(opt == "s"){
+                bo = true;
+            } else {
+                bo = false;
+            }
+		}
+    }
+
+    public Alimento novoAlim(){
+        Scanner strInput = new Scanner(System.in);
+        Scanner intInput = new Scanner(System.in);
+        Scanner dblInput = new Scanner(System.in);
+
+        System.out.println("Dados do alimento\n");
+        System.out.println("Insira o id do alimento: ");
+        int idAlim = intInput.nextInt();
+
+        System.out.println("Qual o tipo do alimento?: ");
+        String tipoAlim = strInput.nextLine();
+
+        System.out.println("Insira o nome do alimento: ");
+        String nome = strInput.nextLine();
+
+        System.out.println("Quantos dias até a validade?: ");
+        int validade = intInput.nextInt();
+
+        System.out.println("Quantos alimentos serão adicionados?: ");
+        int quantidade = intInput.nextInt();
+
+        System.out.println("Qual o valor unitario dos alimentos?: ");
+        double valorUnit = dblInput.nextDouble();
+
+        System.out.println("Dados do fornecedor\n");
+
+        System.out.println("Insira o nome do fornecedor: ");
+        String nomeForn = strInput.nextLine();
+
+        System.out.println("Insira o endereco do fornecedor: ");
+        String endForn = strInput.nextLine();
+
+        System.out.println("Insira o contato do fornecedor: ");
+        String contForn = strInput.nextLine();
+
+        Alimento a1 = new Alimento(idAlim, nome, validade, quantidade, new Fornecedor(nomeForn, endForn, contForn), new Categoria(tipoAlim, validade), valorUnit);
+        return a1;
     }
 }

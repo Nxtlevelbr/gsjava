@@ -1,30 +1,18 @@
 package Classes;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.List;
 
 
 public class Fornecedor {
 
-    private int id;
     private String nome;
     private String endereco;
     private String contato;
-    private List<Alimento> alimentos;
 
-    public Fornecedor(int id, String nome, String endereco, String contato) {
-        this.id = id;
+    public Fornecedor(String nome, String endereco, String contato) {
         this.nome = nome;
         this.endereco = endereco;
         this.contato = contato;
-        this.alimentos = new ArrayList<>();
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getNome() {
@@ -50,7 +38,7 @@ public class Fornecedor {
     public void setContato(String contato) {
         this.contato = contato;
     }
-
+  
     public void adicionarAlimento(Alimento alimento) {
         alimentos.add(alimento);
     }
@@ -66,4 +54,5 @@ public class Fornecedor {
             return 0.0; // oou algum valor padrão caso não haja alimentos cadastrados para esse fornecedor
         }
     }
+
  }

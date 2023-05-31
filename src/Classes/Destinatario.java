@@ -1,48 +1,50 @@
 package Classes;
 
+import java.util.ArrayList;
+import java.util.Date;
+
 public class Destinatario {
 
-    private int id;
-    private String nome;
-    private String endereco;
-    private String contato;
+	private String nome;
+    private ArrayList<Doacao> lotesDoados;
 
-    public Destinatario(int id, String nome, String endereco, String contato) {
-        this.id = id;
-        this.nome = nome;
-        this.endereco = endereco;
-        this.contato = contato;
+    public Destinatario(String nome) {
+    	this.nome = nome;
+    	this.lotesDoados = new ArrayList<Doacao>();
     }
 
-    public int getId() {
-        return id;
+    public ArrayList<Doacao> getLotesDoados() {
+        return lotesDoados;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setLotesDoados(ArrayList<Doacao> lotesDoados) {
+        this.lotesDoados = lotesDoados;
     }
-
+    
     public String getNome() {
-        return nome;
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public void enviarDoac(Doacao doacao){
+    	lotesDoados.add(doacao);
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
+	public void listarDoac(){
+		for(Doacao doacao : lotesDoados){
+			System.out.println(doacao.getId());
+		}
+	}
 
-    public String getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
-    }
-
-    public String getContato() {
-        return contato;
-    }
-
-    public void setContato(String contato) {
-        this.contato = contato;
-    }
+	public void mostrar() {
+		System.out.println("Destinatario" + getNome());
+		System.out.println("Lotes doados: ");
+		listarDoac();
+		System.out.println();
+	}
+	
+	
 }
