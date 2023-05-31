@@ -9,6 +9,11 @@ public class Doacao {
 
     public Doacao(int id){
         this.id = id;
+        alimentos = new ArrayList<Alimento>();
+    }
+    
+    public Doacao() {
+    	
     }
 
     public int getId() {

@@ -5,20 +5,12 @@ import java.util.Date;
 
 public class Destinatario {
 
-    private Date dataDoacao;
+	private String nome;
     private ArrayList<Doacao> lotesDoados;
 
-    public Destinatario(Date dataDoacao, ArrayList<Doacao> lotesDoados) {
-        this.dataDoacao = dataDoacao;
-        this.lotesDoados = lotesDoados;
-    }
-
-    public Date getDataDoacao() {
-        return dataDoacao;
-    }
-
-    public void setDataDoacao(Date dataDoacao) {
-        this.dataDoacao = dataDoacao;
+    public Destinatario(String nome) {
+    	this.nome = nome;
+    	this.lotesDoados = new ArrayList<Doacao>();
     }
 
     public ArrayList<Doacao> getLotesDoados() {
@@ -28,10 +20,16 @@ public class Destinatario {
     public void setLotesDoados(ArrayList<Doacao> lotesDoados) {
         this.lotesDoados = lotesDoados;
     }
+    
+    public String getNome() {
+		return nome;
+	}
 
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
 
-    public void enviarDoac(Doacao doacao){
+	public void enviarDoac(Doacao doacao){
     	lotesDoados.add(doacao);
     }
-
 }
