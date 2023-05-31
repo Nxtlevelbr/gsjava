@@ -2,6 +2,7 @@ package Classes;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
+
 public class Fornecedor {
 
     private String nome;
@@ -37,5 +38,21 @@ public class Fornecedor {
     public void setContato(String contato) {
         this.contato = contato;
     }
-    
+  
+    public void adicionarAlimento(Alimento alimento) {
+        alimentos.add(alimento);
+    }
+
+    public double getPrecoUnitario() {
+        if (!alimentos.isEmpty()) {
+            double somaPrecos = 0.0;
+            for (Alimento alimento : alimentos) {
+                somaPrecos += alimento.getValorUnitario();
+            }
+            return somaPrecos / alimentos.size();
+        } else {
+            return 0.0; // oou algum valor padrão caso não haja alimentos cadastrados para esse fornecedor
+        }
+    }
+
  }
