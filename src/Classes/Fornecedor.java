@@ -1,18 +1,20 @@
 package Classes;
-import java.lang.reflect.Array;
+import Classes.Alimento;
 import java.util.ArrayList;
-
+import java.util.List;
 
 public class Fornecedor {
 
     private String nome;
     private String endereco;
     private String contato;
+    private List<Alimento> alimentos;
 
     public Fornecedor(String nome, String endereco, String contato) {
         this.nome = nome;
         this.endereco = endereco;
         this.contato = contato;
+        this.alimentos = new ArrayList<>();
     }
 
     public String getNome() {
@@ -38,7 +40,7 @@ public class Fornecedor {
     public void setContato(String contato) {
         this.contato = contato;
     }
-  
+
     public void adicionarAlimento(Alimento alimento) {
         alimentos.add(alimento);
     }
@@ -51,8 +53,8 @@ public class Fornecedor {
             }
             return somaPrecos / alimentos.size();
         } else {
-            return 0.0; // oou algum valor padrão caso não haja alimentos cadastrados para esse fornecedor
+            return 0.0; // ou algum valor padrão caso não haja alimentos cadastrados para esse fornecedor
         }
     }
+}
 
- }

@@ -33,4 +33,12 @@ public class Revenda {
         this.valorRevenda = valorRevenda;
         this.descontoAlimento = descontoAlimento;
     }
+    public void mostrarRevenda() {
+        System.out.println("Revenda");
+        System.out.println("ID: " + id);
+        System.out.println("Valor de Revenda: " + valorRevenda);
+        System.out.println("Desconto de Alimento: " + descontoAlimento);
+        System.out.println();
+    }
+
 }

@@ -1,13 +1,25 @@
 package Classes;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Processamento {
     private int idProc;
-    public String produtoFinal;
-    public String descricaoAlimento;
-    public String tipoAlimento;
-    public String capacidadeProc;
-    public Date dataProduc;
+    private String produtoFinal;
+    private String descricaoAlimento;
+    private String tipoAlimento;
+    private String capacidadeProc;
+    private Date dataProduc;
+    private ArrayList<Alimento> lotes;
+
+    public Processamento(int idProc, String produtoFinal, String descricaoAlimento, String tipoAlimento, String capacidadeProc, Date dataProduc) {
+        this.idProc = idProc;
+        this.produtoFinal = produtoFinal;
+        this.descricaoAlimento = descricaoAlimento;
+        this.tipoAlimento = tipoAlimento;
+        this.capacidadeProc = capacidadeProc;
+        this.dataProduc = dataProduc;
+        this.lotes = new ArrayList<>();
+    }
 
     public int getIdProc() {
         return idProc;
@@ -57,5 +69,15 @@ public class Processamento {
         this.dataProduc = dataProduc;
     }
 
-
+    public ArrayList<Alimento> getLotes() {
+        return lotes;
     }
+
+    public void setLotes(ArrayList<Alimento> lotes) {
+        this.lotes = lotes;
+    }
+
+    public void adicionarLote(Alimento alimento) {
+        lotes.add(alimento);
+    }
+}

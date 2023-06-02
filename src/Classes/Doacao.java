@@ -1,19 +1,50 @@
 package Classes;
-import java.util.ArrayList;
-import java.util.Scanner;
+
+import java.util.Date;
+import java.util.List;
 
 public class Doacao {
-
     private int id;
-    private ArrayList<Alimento> alimentos;
+    private String doador;
+    private List<String> itens;
 
-    public Doacao(int id){
+    public Doacao(int id, String doador, List<String> itens) {
         this.id = id;
-        alimentos = new ArrayList<Alimento>();
+        this.doador = doador;
+        this.itens = itens;
     }
-    
-    public Doacao() {
-    	
+
+    // Mét. oper. com parâmetros e retorno
+    public float calcularValorTotal(float valorUnitario, int quantidade) {
+        return valorUnitario * quantidade;
+    }
+
+    // Mét. oper. com parâmetros e retorno
+    public int contarItens() {
+        return itens.size();
+    }
+
+    // Mét. oper. com parâmetros e retorno
+    public boolean verificarValidade(Date dataValidade) {
+        Date dataAtual = new Date();
+        return dataValidade.after(dataAtual);
+    }
+
+    // Mét.com sobrecarga
+    public void registrarDoacao(String doador) {
+        this.doador = doador;
+    }
+
+    // Mét. com sobrecarga
+    public void registrarDoacao(String doador, List<String> itens) {
+        this.doador = doador;
+        this.itens = itens;
+    }
+
+    // Mét. com sobrescrita
+    @Override
+    public String toString() {
+        return "Doação: [id=" + id + ", doador=" + doador + ", itens=" + itens + "]";
     }
 
     public int getId() {
@@ -24,69 +55,20 @@ public class Doacao {
         this.id = id;
     }
 
-    public ArrayList<Alimento> getAlimentos() {
-        return alimentos;
+    public String getDoador() {
+        return doador;
     }
 
-    public void setAlimentos(ArrayList<Alimento> alimentos) {
-		this.alimentos = alimentos;
-	}
-
-	public void addLote(){
-		Scanner strInput = new Scanner(System.in);
-        String opt;
-        boolean bo = true;
-
-        while(bo == true) {
-
-			alimentos.add(novoAlim());
-
-            System.out.println("Gostaria de adicionar um novo alimento? s/n: ");
-            opt = strInput.nextLine();
-            if(opt == "s"){
-                bo = true;
-            } else {
-                bo = false;
-            }
-		}
+    public void setDoador(String doador) {
+        this.doador = doador;
     }
 
-    public Alimento novoAlim(){
-        Scanner strInput = new Scanner(System.in);
-        Scanner intInput = new Scanner(System.in);
-        Scanner dblInput = new Scanner(System.in);
+    public List<String> getItens() {
+        return itens;
+    }
 
-        System.out.println("Dados do alimento\n");
-        System.out.println("Insira o id do alimento: ");
-        int idAlim = intInput.nextInt();
-
-        System.out.println("Qual o tipo do alimento?: ");
-        String tipoAlim = strInput.nextLine();
-
-        System.out.println("Insira o nome do alimento: ");
-        String nome = strInput.nextLine();
-
-        System.out.println("Quantos dias até a validade?: ");
-        int validade = intInput.nextInt();
-
-        System.out.println("Quantos alimentos serão adicionados?: ");
-        int quantidade = intInput.nextInt();
-
-        System.out.println("Qual o valor unitario dos alimentos?: ");
-        double valorUnit = dblInput.nextDouble();
-
-        System.out.println("Dados do fornecedor\n");
-
-        System.out.println("Insira o nome do fornecedor: ");
-        String nomeForn = strInput.nextLine();
-
-        System.out.println("Insira o endereco do fornecedor: ");
-        String endForn = strInput.nextLine();
-
-        System.out.println("Insira o contato do fornecedor: ");
-        String contForn = strInput.nextLine();
-
-        Alimento a1 = new Alimento(idAlim, nome, validade, quantidade, new Fornecedor(nomeForn, endForn, contForn), new Categoria(tipoAlim, validade), valorUnit);
-        return a1;
+    public void setItens(List<String> itens) {
+        this.itens = itens;
     }
 }
+
