@@ -1,7 +1,7 @@
 package Classes;
-
 import java.util.Date;
 import java.util.List;
+import java.util.Scanner;
 
 public class Doacao {
     private int id;
@@ -12,39 +12,6 @@ public class Doacao {
         this.id = id;
         this.doador = doador;
         this.itens = itens;
-    }
-
-    // Mét. oper. com parâmetros e retorno
-    public float calcularValorTotal(float valorUnitario, int quantidade) {
-        return valorUnitario * quantidade;
-    }
-
-    // Mét. oper. com parâmetros e retorno
-    public int contarItens() {
-        return itens.size();
-    }
-
-    // Mét. oper. com parâmetros e retorno
-    public boolean verificarValidade(Date dataValidade) {
-        Date dataAtual = new Date();
-        return dataValidade.after(dataAtual);
-    }
-
-    // Mét.com sobrecarga
-    public void registrarDoacao(String doador) {
-        this.doador = doador;
-    }
-
-    // Mét. com sobrecarga
-    public void registrarDoacao(String doador, List<String> itens) {
-        this.doador = doador;
-        this.itens = itens;
-    }
-
-    // Mét. com sobrescrita
-    @Override
-    public String toString() {
-        return "Doação: [id=" + id + ", doador=" + doador + ", itens=" + itens + "]";
     }
 
     public int getId() {
@@ -71,4 +38,3 @@ public class Doacao {
         this.itens = itens;
     }
 }
-

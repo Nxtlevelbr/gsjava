@@ -1,13 +1,14 @@
 package Classes;
+
 import java.util.Date;
 
 public class Produto {
     private int id;
-    public String nomeProduto;
-    public String descrProd;
-    public Float valorProd;
-    public Date dataValidade;
-    public Date dataProducao;
+    private String nomeProduto;
+    private String descricaoProduto;
+    private float valorProduto;
+    private Date dataValidade;
+    private Date dataProducao;
 
     public int getId() {
         return id;
@@ -25,20 +26,20 @@ public class Produto {
         this.nomeProduto = nomeProduto;
     }
 
-    public String getDescrProd() {
-        return descrProd;
+    public String getDescricaoProduto() {
+        return descricaoProduto;
     }
 
-    public void setDescrProd(String descrProd) {
-        this.descrProd = descrProd;
+    public void setDescricaoProduto(String descricaoProduto) {
+        this.descricaoProduto = descricaoProduto;
     }
 
-    public Float getValorProd() {
-        return valorProd;
+    public float getValorProduto() {
+        return valorProduto;
     }
 
-    public void setValorProd(Float valorProd) {
-        this.valorProd = valorProd;
+    public void setValorProduto(float valorProduto) {
+        this.valorProduto = valorProduto;
     }
 
     public Date getDataValidade() {
@@ -57,11 +58,11 @@ public class Produto {
         this.dataProducao = dataProducao;
     }
 
-    public Produto(int id, String nomeProduto, String descrProd, Float valorProd, Date dataValidade, Date dataProducao) {
+    public Produto(int id, String nomeProduto, String descricaoProduto, float valorProduto, Date dataValidade, Date dataProducao) {
         this.id = id;
         this.nomeProduto = nomeProduto;
-        this.descrProd = descrProd;
-        this.valorProd = valorProd;
+        this.descricaoProduto = descricaoProduto;
+        this.valorProduto = valorProduto;
         this.dataValidade = dataValidade;
         this.dataProducao = dataProducao;
     }

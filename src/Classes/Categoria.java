@@ -18,7 +18,7 @@ public class Categoria {
         }
     }
 
-    public Categoria(){
+    public Categoria(String frutas){
 
     }
 

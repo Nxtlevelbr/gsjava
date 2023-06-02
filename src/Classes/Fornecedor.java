@@ -17,6 +17,9 @@ public class Fornecedor {
         this.alimentos = new ArrayList<>();
     }
 
+    public Fornecedor(String fornecedorA, String ruaAbc) {
+    }
+
     public String getNome() {
         return nome;
     }
