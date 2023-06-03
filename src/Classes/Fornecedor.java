@@ -1,23 +1,25 @@
 package Classes;
-import Classes.Alimento;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Fornecedor {
 
+    private int id;
     private String nome;
     private String endereco;
     private String contato;
-    private List<Alimento> alimentos;
 
-    public Fornecedor(String nome, String endereco, String contato) {
+    public Fornecedor(int id, String nome, String endereco, String contato) {
+        this.id = id;
         this.nome = nome;
         this.endereco = endereco;
         this.contato = contato;
-        this.alimentos = new ArrayList<>();
     }
 
-    public Fornecedor(String fornecedorA, String ruaAbc) {
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNome() {
@@ -43,21 +45,4 @@ public class Fornecedor {
     public void setContato(String contato) {
         this.contato = contato;
     }
-
-    public void adicionarAlimento(Alimento alimento) {
-        alimentos.add(alimento);
-    }
-
-    public double getPrecoUnitario() {
-        if (!alimentos.isEmpty()) {
-            double somaPrecos = 0.0;
-            for (Alimento alimento : alimentos) {
-                somaPrecos += alimento.getValorUnitario();
-            }
-            return somaPrecos / alimentos.size();
-        } else {
-            return 0.0; // ou algum valor padrão caso não haja alimentos cadastrados para esse fornecedor
-        }
-    }
 }
-

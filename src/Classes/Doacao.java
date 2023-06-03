@@ -1,19 +1,21 @@
 package Classes;
+import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
-import java.util.Scanner;
 
 public class Doacao {
-    private int id;
-    private String doador;
-    private List<String> itens;
-    private Date dataValidade;
 
-    public Doacao(int id, String doador, List<String> itens, Date dataValidade) {
+    private int id;
+    private Date dataDoacao;
+    private int quantidade;
+    private Destinatario destinatario;
+    private ArrayList<Alimento> alimentos;
+
+    public Doacao(int id, Date dataDoacao, int quantidade, Destinatario destinatario, ArrayList<Alimento> alimentos) {
         this.id = id;
-        this.doador = doador;
-        this.itens = itens;
-        this.dataValidade = dataValidade;
+        this.dataDoacao = dataDoacao;
+        this.quantidade = quantidade;
+        this.destinatario = destinatario;
+        this.alimentos = alimentos;
     }
 
     public int getId() {
@@ -24,27 +26,37 @@ public class Doacao {
         this.id = id;
     }
 
-    public String getDoador() {
-        return doador;
+    public Date getDataDoacao() {
+        return dataDoacao;
     }
 
-    public void setDoador(String doador) {
-        this.doador = doador;
+    public void setDataDoacao(Date dataDoacao) {
+        this.dataDoacao = dataDoacao;
     }
 
-    public List<String> getItens() {
-        return itens;
+    public int getQuantidade() {
+        return quantidade;
     }
 
-    public void setItens(List<String> itens) {
-        this.itens = itens;
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
     }
 
-    public Date getDataValidade() {
-        return dataValidade;
+    public Destinatario getDestinatario() {
+        return destinatario;
     }
 
-    public void setDataValidade(Date dataValidade) {
-        this.dataValidade = dataValidade;
+    public void setDestinatario(Destinatario destinatario) {
+        this.destinatario = destinatario;
     }
+
+    public ArrayList<Alimento> getAlimentos() {
+        return alimentos;
+    }
+
+    public void setAlimentos(ArrayList<Alimento> alimentos) {
+        this.alimentos = alimentos;
+    }
+
+    //método adicionar alimentos
 }

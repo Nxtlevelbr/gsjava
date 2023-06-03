@@ -5,21 +5,9 @@ public class Categoria {
     private String tipoAlimento;
     private String prioridade;
 
-    public Categoria(String tipoAlimento, int validade){
+    public Categoria(String tipoAlimento, String prioridade) {
         this.tipoAlimento = tipoAlimento;
-        if (validade > 10){
-            this.prioridade = "Urgente";
-        } else if(validade > 15 && validade < 10){
-            this.prioridade = "Alta";
-        } else if(validade > 30 && validade < 15) {
-            this.prioridade = "Media";
-        } else {
-            this.prioridade = "baixa";
-        }
-    }
-
-    public Categoria(String frutas){
-
+        this.prioridade = prioridade;
     }
 
     public String getTipoAlimento() {
