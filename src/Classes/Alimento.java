@@ -1,79 +1,72 @@
 package Classes;
-import java.util.Date;
 
 public class Alimento {
 
-    private int id;
+	private int id;
     private String nome;
-    private Date dataRecebimento;
-    private int periodoValidade;
+    private int validade;
     private int quantidade;
-    private Fornecedor fornecedor;
     private Categoria categoria;
+    private double valorUnitario;
+    
+    public Alimento(int id, String nome, int validade, int quantidade, Categoria categoria, double valorUnitario) {
+    	this.id = id;
+		this.nome = nome;
+		this.validade = validade;
+		this.quantidade = quantidade;
+		this.categoria = categoria;
+		this.valorUnitario = valorUnitario;
+	}
 
-    public Alimento(int id, String nome, Date dataRecebimento, int periodoValidade, int quantidade, Fornecedor fornecedor, Categoria categoria) {
-        this.id = id;
-        this.nome = nome;
-        this.dataRecebimento = dataRecebimento;
-        this.periodoValidade = periodoValidade;
-        this.quantidade = quantidade;
-        this.fornecedor = fornecedor;
-        this.categoria = categoria;
-    }
+	public Alimento(){
 
-    public int getId() {
-        return id;
     }
+	
+	public int getId() {
+		return id;
+	}
 
-    public void setId(int id) {
-        this.id = id;
-    }
+	public void setId(int id) {
+		this.id = id;
+	}
 
-    public String getNome() {
-        return nome;
-    }
+	public String getNome() {
+		return nome;
+	}
+	
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	
+	public int getValidade() {
+		return validade;
+	}
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
+	public void setValidade(int validade) {
+		this.validade = validade;
+	}
 
-    public Date getDataRecebimento() {
-        return dataRecebimento;
-    }
-
-    public void setDataRecebimento(Date dataRecebimento) {
-        this.dataRecebimento = dataRecebimento;
-    }
-
-    public int getPeriodoValidade() {
-        return periodoValidade;
-    }
-
-    public void setPeriodoValidade(int periodoValidade) {
-        this.periodoValidade = periodoValidade;
-    }
-
-    public int getQuantidade() {
-        return quantidade;
-    }
-
-    public void setQuantidade(int quantidade) {
-        this.quantidade = quantidade;
-    }
-
-    public Fornecedor getFornecedor() {
-        return fornecedor;
-    }
-
-    public void setFornecedor(Fornecedor fornecedor) {
-        this.fornecedor = fornecedor;
-    }
-
-    public Categoria getCategoria() {
-        return categoria;
-    }
-
-    public void setCategoria(Categoria categoria) {
-        this.categoria = categoria;
-    }
+	public int getQuantidade() {
+		return quantidade;
+	}
+	
+	public void setQuantidade(int quantidade) {
+		this.quantidade = quantidade;
+	}
+	
+	public Categoria getCategoria() {
+		return categoria;
+	}
+	
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
+	}
+	
+	public double getValorUnitario() {
+		return valorUnitario;
+	}
+	
+	public void setValorUnitario(double valorUnitario) {
+		this.valorUnitario = valorUnitario;
+	}
 }

@@ -2,24 +2,17 @@ package Classes;
 
 public class Fornecedor {
 
-    private int id;
     private String nome;
     private String endereco;
     private String contato;
 
-    public Fornecedor(int id, String nome, String endereco, String contato) {
-        this.id = id;
+    public Fornecedor(String nome, String endereco, String contato) {
         this.nome = nome;
         this.endereco = endereco;
-        this.contato = contato;
+        this.endereco = endereco;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+    public Fornecedor(String fornecedorA, String ruaAbc) {
     }
 
     public String getNome() {
@@ -46,3 +39,4 @@ public class Fornecedor {
         this.contato = contato;
     }
 }
+
