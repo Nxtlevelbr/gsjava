@@ -7,11 +7,13 @@ public class Doacao {
     private int id;
     private String doador;
     private List<String> itens;
+    private Date dataValidade;
 
-    public Doacao(int id, String doador, List<String> itens) {
+    public Doacao(int id, String doador, List<String> itens, Date dataValidade) {
         this.id = id;
         this.doador = doador;
         this.itens = itens;
+        this.dataValidade = dataValidade;
     }
 
     public int getId() {
@@ -36,5 +38,13 @@ public class Doacao {
 
     public void setItens(List<String> itens) {
         this.itens = itens;
+    }
+
+    public Date getDataValidade() {
+        return dataValidade;
+    }
+
+    public void setDataValidade(Date dataValidade) {
+        this.dataValidade = dataValidade;
     }
 }
