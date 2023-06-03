@@ -20,6 +20,9 @@ public class Alimento {
         this.categoria = categoria;
         this.valorUnitario = valorUnitario;
     }
+    public Alimento(){
+
+    }
 
     public int getId() {
         return id;
