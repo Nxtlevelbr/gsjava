@@ -30,6 +30,7 @@ public class Destinatario {
 		this.nome = nome;
 	}
 
+	//recebe como parametro um obj da classe lote e realiza uma ação com base neste lote como adicionar ao destinatario
 	public void enviarLote(Lote lote){
 		if(lote.getTipo() == "Doação") {
     		lote.setPrecoTotal(0);
