@@ -9,7 +9,7 @@ public class Fornecedor {
     public Fornecedor(String nome, String endereco, String contato) {
         this.nome = nome;
         this.endereco = endereco;
-        this.endereco = endereco;
+        this.contato = contato;
     }
 
     public Fornecedor(String fornecedorA, String ruaAbc) {

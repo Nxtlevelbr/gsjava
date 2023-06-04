@@ -69,4 +69,10 @@ public class Alimento {
 	public void setValorUnitario(double valorUnitario) {
 		this.valorUnitario = valorUnitario;
 	}
+
+// sobrescreve o método toString para retornarem string uma representação do objeto, inclui informações sobre o fornecedor, tipo e lista  de alimentos do lote e retorna uma string com as informações do lote.
+	@Override
+	public String toString() {
+		return "Alimento [id=" +id + ", nome=" + nome + ", validade=" + validade + ", quantidade=" + quantidade + ", categoria=" + categoria + ", valorUnitario=" + valorUnitario + "]";
+	}
 }

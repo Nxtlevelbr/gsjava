@@ -102,7 +102,7 @@ public class Lote {
         Alimento a1 = new Alimento(idAlim, nome, validade, quantidade, new Categoria(tipoAlim, validade), valorUnit);
         return a1;
     }
-
+//méthod de sobre-carga
     public void adicionarAlimento(String nomeAlimento) {
         Alimento alimento = new Alimento();
         alimento.setNome(nomeAlimento);
